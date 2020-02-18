@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/cinema")
@@ -22,5 +23,10 @@ public class CinemaController {
   @PostMapping
   public Film postFilm(@RequestBody Film film){
     return filmService.addFilm(film);
+  }
+
+  @GetMapping(value = "/{id}")
+  public Optional<Film> getFilmById(@PathVariable("id") int id){
+    return filmService.getFilmById(id);
   }
 }

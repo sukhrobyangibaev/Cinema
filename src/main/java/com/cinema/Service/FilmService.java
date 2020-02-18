@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class FilmService {
@@ -19,5 +20,9 @@ public class FilmService {
 
   public Film addFilm(Film film) {
     return filmDAO.addFilm(film);
+  }
+
+  public Optional<Film> getFilmById(int id) {
+    return filmDAO.getFilmById(id);
   }
 }
