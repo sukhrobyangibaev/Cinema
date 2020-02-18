@@ -29,4 +29,9 @@ public class CinemaController {
   public Optional<Film> getFilmById(@PathVariable("id") int id){
     return filmService.getFilmById(id);
   }
+
+  @GetMapping(value = "/year/{year}")
+  public Collection<Film> getFilmByYear(@PathVariable("year") int year){
+    return filmService.getFilmByYear(year);
+  }
 }

@@ -25,4 +25,8 @@ public class FilmService {
   public Optional<Film> getFilmById(int id) {
     return filmDAO.getFilmById(id);
   }
+
+  public Collection<Film> getFilmByYear(int year) {
+    return filmDAO.getFilmByYear(year);
+  }
 }

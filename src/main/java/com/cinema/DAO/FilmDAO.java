@@ -24,4 +24,8 @@ public class FilmDAO {
   public Optional<Film> getFilmById(int id) {
     return filmRepository.findById(id);
   }
+
+  public Collection<Film> getFilmByYear(int year) {
+    return filmRepository.getFilmByYear(year);
+  }
 }
