@@ -1,6 +1,7 @@
 package com.cinema.DAO;
 
 import com.cinema.Entity.Film;
+import com.cinema.Entity.FilmUpdatePayload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -40,6 +41,15 @@ public class FilmDAO {
   public Optional<Film> deleteById(int id) {
     Optional<Film> film = filmRepository.findById(id);
     film.ifPresent(f->filmRepository.delete(f));
+    return film;
+  }
+
+  public Optional<Film> updateById(int id, FilmUpdatePayload filmUpdatePayload) {
+    Optional<Film> film = filmRepository.findById(id);
+    film.ifPresent(f->f.setTitle(filmUpdatePayload.getTitle()));
+    film.ifPresent(f->f.setDirector(filmUpdatePayload.getDirector()));
+    film.ifPresent(f->f.setYear(filmUpdatePayload.getYear()));
+    film.ifPresent(f->filmRepository.save(f));
     return film;
   }
 }

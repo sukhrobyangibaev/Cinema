@@ -1,6 +1,7 @@
 package com.cinema.Controller;
 
 import com.cinema.Entity.Film;
+import com.cinema.Entity.FilmUpdatePayload;
 import com.cinema.Service.FilmService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -48,5 +49,10 @@ public class CinemaController {
   @DeleteMapping(value = "/{id}")
   public Optional<Film> deleteById(@PathVariable("id") int id){
     return filmService.deleteById(id);
+  }
+
+  @PutMapping(value = "/{id}")
+  public Optional<Film> updateById(@PathVariable("id") int id, @RequestBody FilmUpdatePayload filmUpdatePayload){
+    return filmService.updateById(id, filmUpdatePayload);
   }
 }

@@ -2,6 +2,7 @@ package com.cinema.Service;
 
 import com.cinema.DAO.FilmDAO;
 import com.cinema.Entity.Film;
+import com.cinema.Entity.FilmUpdatePayload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -40,5 +41,9 @@ public class FilmService {
 
   public Optional<Film> deleteById(int id) {
     return filmDAO.deleteById(id);
+  }
+
+  public Optional<Film> updateById(int id, FilmUpdatePayload filmUpdatePayload) {
+    return filmDAO.updateById(id,filmUpdatePayload);
   }
 }
