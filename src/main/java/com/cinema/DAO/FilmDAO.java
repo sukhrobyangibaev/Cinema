@@ -15,4 +15,8 @@ public class FilmDAO {
   public Collection<Film> getFilms(){
     return filmRepository.findAll();
   }
+
+  public Film addFilm(Film film) {
+    return filmRepository.insert(film);
+  }
 }

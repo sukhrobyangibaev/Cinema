@@ -17,4 +17,7 @@ public class FilmService {
     return filmDAO.getFilms();
   }
 
+  public Film addFilm(Film film) {
+    return filmDAO.addFilm(film);
+  }
 }
