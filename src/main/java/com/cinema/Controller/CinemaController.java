@@ -44,4 +44,9 @@ public class CinemaController {
   public Collection<Film> getFilmByDirector(@PathVariable("director") String director){
     return filmService.getFilmByDirector(director);
   }
+
+  @DeleteMapping(value = "/{id}")
+  public Optional<Film> deleteById(@PathVariable("id") int id){
+    return filmService.deleteById(id);
+  }
 }

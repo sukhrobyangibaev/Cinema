@@ -37,4 +37,8 @@ public class FilmService {
   public Collection<Film> getFilmByDirector(String director) {
     return filmDAO.getFilmByDirector(director);
   }
+
+  public Optional<Film> deleteById(int id) {
+    return filmDAO.deleteById(id);
+  }
 }

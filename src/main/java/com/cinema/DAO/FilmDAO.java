@@ -36,4 +36,10 @@ public class FilmDAO {
   public Collection<Film> getFilmByDirector(String director) {
     return filmRepository.getFilmByDirector(director);
   }
+
+  public Optional<Film> deleteById(int id) {
+    Optional<Film> film = filmRepository.findById(id);
+    film.ifPresent(f->filmRepository.delete(f));
+    return film;
+  }
 }
