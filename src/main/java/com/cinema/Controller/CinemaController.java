@@ -39,4 +39,9 @@ public class CinemaController {
   public Collection<Film> getFilmByYear(@PathVariable("year") int year){
     return filmService.getFilmByYear(year);
   }
+
+  @GetMapping(value = "/director/{director}")
+  public Collection<Film> getFilmByDirector(@PathVariable("director") String director){
+    return filmService.getFilmByDirector(director);
+  }
 }

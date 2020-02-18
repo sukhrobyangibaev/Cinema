@@ -32,4 +32,8 @@ public class FilmDAO {
   public Optional<Film> getFilmByTitle(String title) {
     return filmRepository.getFilmByTitle(title);
   }
+
+  public Collection<Film> getFilmByDirector(String director) {
+    return filmRepository.getFilmByDirector(director);
+  }
 }

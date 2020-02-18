@@ -11,4 +11,6 @@ public interface FilmRepository extends MongoRepository<Film, Integer> {
   Collection<Film> getFilmByYear(int year);
 
   Optional<Film> getFilmByTitle(String title);
+
+  Collection<Film> getFilmByDirector(String director);
 }

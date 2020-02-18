@@ -33,4 +33,8 @@ public class FilmService {
   public Optional<Film> getFilmByTitle(String title) {
     return filmDAO.getFilmByTitle(title);
   }
+
+  public Collection<Film> getFilmByDirector(String director) {
+    return filmDAO.getFilmByDirector(director);
+  }
 }
