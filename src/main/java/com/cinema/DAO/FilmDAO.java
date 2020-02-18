@@ -28,4 +28,8 @@ public class FilmDAO {
   public Collection<Film> getFilmByYear(int year) {
     return filmRepository.getFilmByYear(year);
   }
+
+  public Optional<Film> getFilmByTitle(String title) {
+    return filmRepository.getFilmByTitle(title);
+  }
 }

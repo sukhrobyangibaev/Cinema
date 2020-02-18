@@ -29,4 +29,8 @@ public class FilmService {
   public Collection<Film> getFilmByYear(int year) {
     return filmDAO.getFilmByYear(year);
   }
+
+  public Optional<Film> getFilmByTitle(String title) {
+    return filmDAO.getFilmByTitle(title);
+  }
 }

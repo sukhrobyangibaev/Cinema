@@ -4,8 +4,11 @@ import com.cinema.Entity.Film;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Collection;
+import java.util.Optional;
 
 public interface FilmRepository extends MongoRepository<Film, Integer> {
 
-  public Collection<Film> getFilmByYear(int year);
+  Collection<Film> getFilmByYear(int year);
+
+  Optional<Film> getFilmByTitle(String title);
 }
